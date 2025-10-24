@@ -14,7 +14,7 @@ class Config:
     # CORS configuration
     CORS_ORIGINS = ['http://localhost:3000', 'http://127.0.0.1:3000', 'https://foodvisionai.onrender.com']
     
-    # Food-101 Class Names (ordered by their numerical ID)
+    # Food-101 Class Names
     FOOD_101_CLASSES = [
         "apple_pie", "baby_back_ribs", "baklava", "beef_carpaccio", "beef_tartare",
         "beet_salad", "beignets", "bibimbap", "bread_pudding", "breakfast_burrito",
