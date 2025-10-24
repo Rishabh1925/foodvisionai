@@ -1,4 +1,4 @@
-# 🍕 Food Vision AI
+# Food Vision AI
 
 <div align="center">
 
@@ -6,35 +6,40 @@
 ![React](https://img.shields.io/badge/React-18.3.1-blue?style=for-the-badge&logo=react&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.13-green?style=for-the-badge&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-3.0.0-red?style=for-the-badge&logo=flask&logoColor=white)
+![Deployment Ready](https://img.shields.io/badge/Deployment-Ready-green?style=for-the-badge)
 
 **AI-Powered Food Recognition Web Application**
 
 *Upload any food image and get instant AI-powered identification with confidence scores*
 
-[🚀 Live Demo](#) | [📖 Documentation](#) | [🔧 API Docs](#api-documentation) | [🚀 Deploy Guide](./HOSTING_GUIDE.md)
+[Quick Start](#quick-start) | [API Docs](#api-documentation) | [Deployment](#deployment)
 
 </div>
 
 ---
 
-## ✨ Overview
+## Overview
 
 Food Vision AI is a modern web application that uses advanced artificial intelligence to identify food items from images. Built with a beautiful glassmorphism UI and powered by Hugging Face's pre-trained food classification model, it provides instant, accurate food recognition with detailed confidence scores.
 
 **Perfect for:** Food bloggers, nutritionists, recipe apps, restaurant apps, and anyone curious about what they're eating!
 
-## 🎯 Features
+---
 
-- 🤖 **AI-Powered Recognition** - Advanced machine learning model trained on 101 food categories
-- ⚡ **Lightning Fast** - Get results in 1-2 seconds
-- 🎨 **Beautiful UI** - Modern glassmorphism design with smooth animations
-- 📊 **Top 5 Predictions** - Detailed confidence scores for each prediction
-- 📱 **Responsive Design** - Works perfectly on desktop and mobile
-- 🔒 **Privacy First** - All processing happens locally, no data sent to external servers
-- 🆓 **Completely Free** - No API keys required, open-source model
-- 🌈 **Custom Favicon** - Beautiful gradient star favicon
+## Features
 
-## 🛠️ Tech Stack
+- **AI-Powered Recognition** - Advanced machine learning model trained on 101 food categories
+- **Lightning Fast** - Get results in 1-2 seconds
+- **Beautiful UI** - Modern glassmorphism design with smooth animations
+- **Top 5 Predictions** - Detailed confidence scores for each prediction
+- **Responsive Design** - Works perfectly on desktop and mobile
+- **Privacy First** - All processing happens locally, no data sent to external servers
+- **Completely Free** - No API keys required, open-source model
+- **Custom Favicon** - Beautiful gradient star favicon
+
+---
+
+## Tech Stack
 
 ### Frontend
 - **React 18** - Modern UI library
@@ -57,7 +62,9 @@ Food Vision AI is a modern web application that uses advanced artificial intelli
 - **Accuracy**: ~94% on test data
 - **Categories**: 101 different food types
 
-## 🚀 Quick Start
+---
+
+## Quick Start
 
 ### Prerequisites
 
@@ -117,32 +124,35 @@ Food Vision AI is a modern web application that uses advanced artificial intelli
 3. Wait 1-2 seconds for AI processing
 4. View the top 5 food predictions with confidence scores!
 
-## 📁 Project Structure
+---
+
+## Project Structure
 
 ```
 foodvisionai/
-├── 📁 backend/                 # Flask API Server
-│   ├── app.py                 # Main Flask application
-│   ├── model.py               # AI model logic
-│   ├── config.py              # Configuration settings
-│   └── requirements.txt       # Python dependencies
-├── 📁 frontend/               # React Frontend
-│   ├── src/                   # Source code
-│   │   ├── components/        # React components
+├── backend/                  # Flask API Server
+│   ├── app.py                # Main Flask application
+│   ├── model.py              # AI model logic
+│   ├── config.py             # Configuration settings
+│   └── requirements.txt      # Python dependencies
+├── frontend/                 # React Frontend
+│   ├── src/                  # Source code
+│   │   ├── components/       # React components
 │   │   ├── App.tsx           # Main application
 │   │   └── main.tsx          # Entry point
 │   ├── public/               # Static assets
 │   ├── package.json          # Dependencies
 │   └── vite.config.ts        # Vite configuration
-├── 📁 venv/                  # Python virtual environment
+├── venv/                     # Python virtual environment
 ├── start_backend.sh          # Backend startup script
 ├── start_frontend.sh         # Frontend startup script
 ├── start_production.sh       # Production startup script
-├── HOSTING_GUIDE.md         # Deployment guide
-└── README.md                # This file
+└── README.md                 
 ```
 
-## 🔌 API Documentation
+---
+
+## API Documentation
 
 ### Health Check
 ```http
@@ -212,7 +222,9 @@ with open('food_image.jpg', 'rb') as f:
     print(result['predictions'])
 ```
 
-## 🤖 Model Information
+---
+
+## Model Information
 
 ### Pre-trained Model
 - **Name**: `nateraw/food`
@@ -235,46 +247,9 @@ The model recognizes 101 different food categories including:
 - **Memory**: ~2GB RAM recommended
 - **No API Keys**: Completely free to use
 
-## 🚀 Deployment
+---
 
-Ready to deploy? Check out our comprehensive [HOSTING_GUIDE.md](./HOSTING_GUIDE.md) for detailed instructions on:
-
-- **Vercel** (Frontend) + **Railway** (Backend)
-- **Heroku** (Full Stack)
-- **DigitalOcean App Platform**
-- **Docker** deployment
-- **Custom domain** setup
-
-### Quick Deploy Options
-
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new)
-[![Deploy to Railway](https://railway.app/button)](https://railway.app/new)
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-## ⚙️ Configuration
-
-### Environment Variables
-
-**Backend (.env):**
-```env
-FLASK_ENV=production
-HOST=0.0.0.0
-PORT=8000
-MAX_IMAGE_SIZE=10485760  # 10MB
-```
-
-**Frontend (.env.production):**
-```env
-VITE_API_URL=https://your-backend-url.com
-```
-
-### CORS Settings
-The backend is configured to allow requests from:
-- `http://localhost:3000` (development)
-- `http://127.0.0.1:3000` (development)
-- Add your production domain to `config.py`
-
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -282,6 +257,7 @@ The backend is configured to allow requests from:
 - Ensure stable internet connection
 - Check available disk space (~1GB for model cache)
 - Model downloads to `~/.cache/huggingface/`
+- Check Hugging Face Hub status
 
 **CORS Issues:**
 - Ensure frontend runs on `localhost:3000`
@@ -298,6 +274,18 @@ The backend is configured to allow requests from:
 - Ensure file is a valid image format
 - Supported formats: PNG, JPG, JPEG, GIF, WebP
 
+### Performance Issues
+
+**Slow Predictions:**
+- Check server resources
+- Optimize image sizes before upload
+- Consider upgrading server resources
+
+**Memory Issues:**
+- Monitor RAM usage
+- Consider CPU-only inference
+- Implement request queuing for high traffic
+
 ### Getting Help
 
 1. Check the [Issues](https://github.com/yourusername/foodvisionai/issues) page
@@ -308,7 +296,16 @@ The backend is configured to allow requests from:
    - Error messages
    - Steps to reproduce
 
-## 🤝 Contributing
+**Support Resources:**
+
+- [Flask Documentation](https://flask.palletsprojects.com/)
+- [React Documentation](https://react.dev/)
+- [Vite Documentation](https://vitejs.dev/)
+- [Hugging Face Documentation](https://huggingface.co/docs)
+
+---
+
+## Contributing
 
 We welcome contributions! Here's how you can help:
 
@@ -326,29 +323,28 @@ We welcome contributions! Here's how you can help:
 4. Ensure code follows the existing style
 5. Update documentation if needed
 
-## 📄 License
+---
+
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+---
+
+## Acknowledgments
 
 - **Hugging Face** for the amazing pre-trained models
 - **Food-101 Dataset** creators for the training data
 - **React** and **Flask** communities for excellent documentation
 - **Radix UI** for accessible component primitives
 
-## 📞 Contact
+---
+
+## Contact
 
 - **GitHub**: [@yourusername](https://github.com/yourusername)
 - **Email**: your.email@example.com
 - **Project Link**: [https://github.com/yourusername/foodvisionai](https://github.com/yourusername/foodvisionai)
 
 ---
-
-<div align="center">
-
-**Made with ❤️ and AI**
-
-*Star ⭐ this repository if you found it helpful!*
-
 </div>
