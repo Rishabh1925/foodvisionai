@@ -392,12 +392,4 @@ You are free to use, modify, and distribute this software for any purpose, comme
 [![GitHub](https://img.shields.io/badge/GitHub-Rishabh1925-black?style=flat&logo=github)](https://github.com/Rishabh1925)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/rishabh-ranjan-singh/)
 
----
-
-<div align="center">
-
-**Star this repo if you find it helpful!**
-
-Made by [Rishabh Ranjan Singh](https://github.com/Rishabh1925)
-
 </div>
