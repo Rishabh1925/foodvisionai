@@ -9,7 +9,7 @@
 
 **AI-Powered Food Recognition in Your Browser**
 
-*Upload any food image and get instant AI-powered identification with confidence scores*
+*Upload any Food image and get instant AI-powered Identification with Confidence Scores*
 
 [![Live Platform](https://img.shields.io/badge/Live%20Platform-Try%20Now-success?style=for-the-badge)](https://foodvisionai.vercel.app/)
 [![Demo Video](https://img.shields.io/badge/Demo%20Video-Watch%20Now-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/posts/rishabh-ranjan-singh_opensource-ai-voiceai-activity-7386952027756687360-gJJB?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFFUAW4BZLDDmOzPMOYLV-v19zDfIgL3Eho)
