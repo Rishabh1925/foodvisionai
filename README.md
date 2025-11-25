@@ -1,8 +1,9 @@
+<div align="center">
+   
 # FoodVisionAI
 
 <div align="center">
 
-![FoodVisionAI](https://img.shields.io/badge/FoodVisionAI%20Powered-orange?style=for-the-badge&logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-18.3.1-blue?style=for-the-badge&logo=react&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.13-green?style=for-the-badge&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-3.0.0-red?style=for-the-badge&logo=flask&logoColor=white)
