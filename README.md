@@ -13,7 +13,6 @@
 *Upload any Food image and get instant AI-powered Identification with Confidence Scores*
 
 [![Live Platform](https://img.shields.io/badge/Live%20Platform-Try%20Now-success?style=for-the-badge)](https://foodvisionai.vercel.app/)
-[![Demo Video](https://img.shields.io/badge/Demo%20Video-Watch%20Now-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/posts/rishabh-ranjan-singh_opensource-ai-voiceai-activity-7386952027756687360-gJJB?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFFUAW4BZLDDmOzPMOYLV-v19zDfIgL3Eho)
 [![Report Bug](https://img.shields.io/badge/Report-Bug-red?style=for-the-badge)](https://github.com/Rishabh1925/foodvisionai/issues)
 
 
@@ -391,6 +390,5 @@ You are free to use, modify, and distribute this software for any purpose, comme
 **Developer:** Rishabh Ranjan Singh
 
 [![GitHub](https://img.shields.io/badge/GitHub-Rishabh1925-black?style=flat&logo=github)](https://github.com/Rishabh1925)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/rishabh-ranjan-singh/)
 
 </div>
