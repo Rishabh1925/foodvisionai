@@ -43,7 +43,7 @@ export default function App() {
       const formData = new FormData();
       formData.append('image', file);
       
-      const response = await fetch('http://localhost:8000/api/predict', {
+      const response = await fetch('https://rishabh-1-foodvision-ai-api.hf.space/api/predict', {
         method: 'POST',
         body: formData,
       });

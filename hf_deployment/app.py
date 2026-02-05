@@ -6,7 +6,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from model import get_model
-from config_hf import Config
+from config import Config
 
 app = Flask(__name__)
 CORS(app, origins=Config.CORS_ORIGINS)
