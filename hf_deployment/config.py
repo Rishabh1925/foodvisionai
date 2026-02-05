@@ -5,11 +5,11 @@ class Config:
     MAX_IMAGE_SIZE = 10 * 1024 * 1024
     ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'webp'}
     
-    DEBUG = True
+    DEBUG = False
     HOST = '0.0.0.0'
-    PORT = 8000
+    PORT = 7860
     
-    CORS_ORIGINS = ['http://localhost:3000', 'http://127.0.0.1:3000', 'https://foodvisionai.onrender.com']
+    CORS_ORIGINS = ['*']
     
     FOOD_101_CLASSES = [
         "apple_pie", "baby_back_ribs", "baklava", "beef_carpaccio", "beef_tartare",

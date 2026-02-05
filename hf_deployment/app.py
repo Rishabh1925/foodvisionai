@@ -6,12 +6,26 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from model import get_model
-from config import Config
+from config_hf import Config
 
 app = Flask(__name__)
 CORS(app, origins=Config.CORS_ORIGINS)
 
 app.config['MAX_CONTENT_LENGTH'] = Config.MAX_IMAGE_SIZE
+
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({
+        "message": "Food Vision AI API",
+        "description": "AI-powered food recognition using Hugging Face transformers",
+        "model": Config.MODEL_NAME,
+        "endpoints": {
+            "health": "/api/health",
+            "predict": "/api/predict (POST with image file)"
+        },
+        "supported_formats": list(Config.ALLOWED_EXTENSIONS),
+        "max_file_size": f"{Config.MAX_IMAGE_SIZE // (1024*1024)}MB"
+    })
 
 @app.route('/api/health', methods=['GET'])
 def health_check():
@@ -64,7 +78,7 @@ def internal_error(e):
     return jsonify({"error": "Internal server error"}), 500
 
 if __name__ == '__main__':
-    print("Starting Food Vision AI API...")
+    print("Starting Food Vision AI API for Hugging Face Spaces...")
     print(f"Model: {Config.MODEL_NAME}")
     print(f"Server running on http://{Config.HOST}:{Config.PORT}")
     

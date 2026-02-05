@@ -77,7 +77,7 @@ Food Vision AI is a modern web application that uses advanced artificial intelli
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/foodvisionai.git
+   git clone https://github.com/Rishabh1925/foodvisionai.git
    cd foodvisionai
    ```
 
@@ -85,7 +85,7 @@ Food Vision AI is a modern web application that uses advanced artificial intelli
    ```bash
    # Create virtual environment
    python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate     # On Windows: venv\Scripts\activate
    
    # Install dependencies
    pip install -r backend/requirements.txt
@@ -100,16 +100,13 @@ Food Vision AI is a modern web application that uses advanced artificial intelli
 
 4. **Start the application**
    ```bash
-   # Option 1: Use startup scripts (recommended)
-   ./start_production.sh
-   
-   # Option 2: Manual start
    # Terminal 1 - Backend
-   source venv/bin/activate
-   python backend/app.py
+   cd backend
+   python app.py
    
    # Terminal 2 - Frontend
    cd frontend
+   npm install
    npm run dev
    ```
 
@@ -144,9 +141,6 @@ foodvisionai/
 │   ├── package.json          # Dependencies
 │   └── vite.config.ts        # Vite configuration
 ├── venv/                     # Python virtual environment
-├── start_backend.sh          # Backend startup script
-├── start_frontend.sh         # Frontend startup script
-├── start_production.sh       # Production startup script
 └── README.md                 
 ```
 

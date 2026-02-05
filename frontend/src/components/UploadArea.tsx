@@ -28,7 +28,6 @@ export function UploadArea({ onImageSelect, isProcessing, isDark }: UploadAreaPr
     const file = e.dataTransfer.files[0];
     if (file && file.type.startsWith('image/')) {
       onImageSelect(file);
-      // Clear the file input value to allow selecting the same file again
       if (fileInputRef.current) {
         fileInputRef.current.value = '';
       }
@@ -39,7 +38,6 @@ export function UploadArea({ onImageSelect, isProcessing, isDark }: UploadAreaPr
     const file = e.target.files?.[0];
     if (file) {
       onImageSelect(file);
-      // Clear the input value to allow selecting the same file again
       e.target.value = '';
     }
   };
@@ -73,7 +71,6 @@ export function UploadArea({ onImageSelect, isProcessing, isDark }: UploadAreaPr
           ${isProcessing ? 'pointer-events-none opacity-60' : ''}
         `}
       >
-        {/* Animated border effect */}
         {isDragging && (
           <motion.div
             className="absolute inset-0 rounded-3xl"
@@ -92,7 +89,6 @@ export function UploadArea({ onImageSelect, isProcessing, isDark }: UploadAreaPr
         )}
 
         <div className="relative z-10 flex flex-col items-center gap-4 sm:gap-6">
-          {/* Icon */}
           <motion.div
             className="relative"
             animate={isDragging ? { scale: [1, 1.1, 1] } : {}}
@@ -117,7 +113,6 @@ export function UploadArea({ onImageSelect, isProcessing, isDark }: UploadAreaPr
             </div>
           </motion.div>
 
-          {/* Text */}
           <div className="text-center space-y-1 sm:space-y-2 px-4">
             <h3 className={`text-base sm:text-lg md:text-xl ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
               {isProcessing ? 'Analyzing your food...' : 'Drag & drop your food image here'}
@@ -127,7 +122,6 @@ export function UploadArea({ onImageSelect, isProcessing, isDark }: UploadAreaPr
             </p>
           </div>
 
-          {/* Supported formats */}
           <div className="flex items-stretch gap-2 sm:gap-3 justify-center w-full max-w-[280px] sm:max-w-xs mx-auto">
             <div className={`flex items-center justify-center gap-1 sm:gap-1.5 backdrop-blur-md ${
               isDark 
@@ -147,7 +141,6 @@ export function UploadArea({ onImageSelect, isProcessing, isDark }: UploadAreaPr
             </div>
           </div>
 
-          {/* Upload icon */}
           {!isProcessing && (
             <motion.div
               animate={{ y: [0, -8, 0] }}
@@ -158,7 +151,6 @@ export function UploadArea({ onImageSelect, isProcessing, isDark }: UploadAreaPr
           )}
         </div>
 
-        {/* Hidden file input */}
         <input
           ref={fileInputRef}
           type="file"

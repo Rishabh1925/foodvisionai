@@ -6,7 +6,6 @@ export function BullseyeIcon({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Outer circle */}
       <circle
         cx="50"
         cy="50"
@@ -17,7 +16,6 @@ export function BullseyeIcon({ className }: { className?: string }) {
         opacity="0.3"
       />
       
-      {/* Middle circle */}
       <circle
         cx="50"
         cy="50"
@@ -28,7 +26,6 @@ export function BullseyeIcon({ className }: { className?: string }) {
         opacity="0.5"
       />
       
-      {/* Inner circle */}
       <circle
         cx="50"
         cy="50"
@@ -39,7 +36,6 @@ export function BullseyeIcon({ className }: { className?: string }) {
         opacity="0.7"
       />
       
-      {/* Center dot */}
       <circle
         cx="50"
         cy="50"
@@ -47,7 +43,6 @@ export function BullseyeIcon({ className }: { className?: string }) {
         fill="currentColor"
       />
       
-      {/* Arrow shaft */}
       <line
         x1="72"
         y1="28"
@@ -58,7 +53,6 @@ export function BullseyeIcon({ className }: { className?: string }) {
         strokeLinecap="round"
       />
       
-      {/* Arrow head - pointed triangle */}
       <path
         d="M 50 50 L 64 42 L 58 48 L 64 54 Z"
         fill="currentColor"

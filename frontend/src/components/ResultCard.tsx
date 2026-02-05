@@ -10,7 +10,6 @@ interface ResultCardProps {
   isDark: boolean;
 }
 
-// Generate random gradient based on index for consistent but varied colors
 const getRandomGradient = (index: number) => {
   const gradients = [
     { bg: 'from-emerald-500/20 via-teal-500/20 to-cyan-500/20', icon: 'text-emerald-400' },
@@ -25,7 +24,6 @@ const getRandomGradient = (index: number) => {
     { bg: 'from-amber-500/20 via-orange-500/20 to-red-500/20', icon: 'text-amber-400' },
   ];
   
-  // Use index to pick a gradient, but add some pseudo-randomness
   const seed = (index * 7 + 3) % gradients.length;
   return gradients[seed];
 };
@@ -48,7 +46,6 @@ export function ResultCard({ name, confidence, index, isTopPrediction, isDark }:
           ? 'bg-white/[0.05] border-white/[0.15]' 
           : 'bg-black/[0.05] border-black/[0.15]'
       } border rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]`}>
-        {/* Top prediction badge */}
         {isTopPrediction && (
           <div className="absolute top-3 sm:top-4 right-3 sm:right-4 z-10">
             <div className="backdrop-blur-md bg-gradient-to-r from-green-400 to-emerald-500 border-0 text-white shadow-lg px-2.5 py-1 rounded-full flex items-center gap-1 text-xs sm:text-sm">
@@ -58,7 +55,6 @@ export function ResultCard({ name, confidence, index, isTopPrediction, isDark }:
           </div>
         )}
 
-        {/* Icon header with gradient background */}
         <div className={`relative overflow-hidden bg-gradient-to-br ${gradient.bg} py-6 sm:py-8`}>
           <div className="flex justify-center">
             <motion.div
@@ -75,9 +71,7 @@ export function ResultCard({ name, confidence, index, isTopPrediction, isDark }:
           </div>
         </div>
 
-        {/* Content */}
         <div className="p-4 sm:p-6 space-y-4 sm:space-y-5">
-          {/* Food name and rank */}
           <div className="flex items-start justify-between gap-3">
             <h4 className={`text-base sm:text-lg ${isDark ? 'text-gray-100' : 'text-gray-800'} flex-1`}>
               {name}
@@ -91,7 +85,6 @@ export function ResultCard({ name, confidence, index, isTopPrediction, isDark }:
             </div>
           </div>
 
-          {/* Confidence */}
           <div className="space-y-2 sm:space-y-2.5">
             <div className="flex items-center justify-between">
               <span className={`text-sm sm:text-base ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Confidence</span>
@@ -116,7 +109,6 @@ export function ResultCard({ name, confidence, index, isTopPrediction, isDark }:
           </div>
         </div>
 
-        {/* Glassmorphism overlay on hover */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/[0.08] group-hover:to-pink-500/[0.08] transition-all duration-300 pointer-events-none rounded-2xl" />
       </div>
     </motion.div>

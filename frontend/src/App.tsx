@@ -9,7 +9,6 @@ import { Switch } from './components/ui/switch';
 import { toast } from 'sonner@2.0.3';
 import { Toaster } from './components/ui/sonner';
 
-// Mock prediction data (in production, this would come from your AI API)
 const mockPredictions = [
   { name: 'Gourmet Steak Plate', confidence: 94 },
   { name: 'Fresh Sushi Platter', confidence: 87 },
@@ -27,30 +26,23 @@ export default function App() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
   
-  // Transform scroll into opacity for content reveal
   const contentOpacity = useTransform(scrollY, [0, 200], [0, 1]);
   const contentY = useTransform(scrollY, [0, 200], [50, 0]);
-  
-  // Parallax effect for video background
   const videoY = useTransform(scrollY, [0, 1000], [0, -300]);
 
   const handleImageSelect = async (file: File) => {
-    // Create preview URL
     const imageUrl = URL.createObjectURL(file);
     setUploadedImage(imageUrl);
     
-    // Start AI processing
     setIsProcessing(true);
     setShowResults(false);
     
     toast.loading('Analyzing your food image...', { id: 'processing' });
     
     try {
-      // Prepare form data for API call
       const formData = new FormData();
       formData.append('image', file);
       
-      // Call the backend API
       const response = await fetch('http://localhost:8000/api/predict', {
         method: 'POST',
         body: formData,
@@ -64,7 +56,6 @@ export default function App() {
       const data = await response.json();
       
       if (data.success && data.predictions) {
-        // Transform the API response to match our component format
         const transformedPredictions = data.predictions.map((pred: any) => ({
           name: pred.class.replace(/_/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()),
           confidence: Math.round(pred.confidence * 100) / 100
@@ -90,9 +81,8 @@ export default function App() {
     setShowResults(false);
     setUploadedImage(null);
     setIsProcessing(false);
-    setPredictions(mockPredictions); // Reset to mock data
+    setPredictions(mockPredictions);
     
-    // Clear any file input values to allow re-uploading the same file
     const fileInputs = document.querySelectorAll('input[type="file"]');
     fileInputs.forEach((input: any) => {
       input.value = '';
@@ -111,7 +101,6 @@ export default function App() {
     <div className={`min-h-screen relative overflow-hidden transition-colors duration-500 ${
       isDark ? 'bg-gray-950' : 'bg-gray-100'
     }`}>
-      {/* Video Background with Parallax - Fixed position spanning entire viewport */}
       {isDark && (
         <div className="fixed inset-0 z-0 overflow-hidden">
           <motion.div
@@ -130,14 +119,10 @@ export default function App() {
             >
               <source src="https://cdn.pixabay.com/video/2020/06/19/42787-433081302_large.mp4" type="video/mp4" />
             </video>
-            {/* Gradient fade at top and bottom to mask loop transition */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 pointer-events-none" />
           </motion.div>
-          {/* Dark overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
-          {/* Glassmorphism blur overlay */}
           <div className="absolute inset-0 backdrop-blur-[0.5px]" />
-          {/* Animated gradient overlay */}
           <motion.div
             className="absolute inset-0 opacity-30"
             animate={{
@@ -157,7 +142,6 @@ export default function App() {
         </div>
       )}
       
-      {/* Light theme background */}
       {!isDark && (
         <div className="fixed inset-0 z-0">
           <motion.div
@@ -179,9 +163,7 @@ export default function App() {
         </div>
       )}
       
-      {/* Initial viewport - Food Vision AI title */}
       <div className="h-screen flex items-center justify-center px-4 md:px-8 relative z-10">
-        {/* Theme Toggle */}
         <div className="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50">
           <div 
             className={`backdrop-blur-md ${
@@ -219,7 +201,6 @@ export default function App() {
                 ease: "easeInOut"
               }}
             >
-              {/* Outer glow ring */}
               <motion.div 
                 className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-xl sm:rounded-2xl blur-xl opacity-60"
                 animate={{
@@ -232,7 +213,6 @@ export default function App() {
                   ease: "easeInOut"
                 }}
               />
-              {/* Icon container */}
               <div className="relative bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 p-3 sm:p-4 md:p-5 rounded-xl sm:rounded-2xl shadow-2xl">
                 <Sparkles className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-white" />
               </div>
@@ -246,7 +226,6 @@ export default function App() {
             </h1>
           </motion.div>
 
-          {/* Scroll indicator */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -273,7 +252,6 @@ export default function App() {
       
       <main ref={containerRef} className="pb-12 px-4 md:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
-          {/* Hero Content - appears on scroll */}
           <motion.div
             style={{ opacity: contentOpacity, y: contentY }}
             className="text-center mb-8 sm:mb-12 space-y-4 sm:space-y-6"
@@ -303,7 +281,6 @@ export default function App() {
             </p>
           </motion.div>
 
-          {/* Upload Area */}
           <div className="mb-16">
             <UploadArea 
               onImageSelect={handleImageSelect} 
@@ -312,7 +289,6 @@ export default function App() {
             />
           </div>
 
-          {/* Uploaded Image Preview - Shown prominently when results are displayed */}
           <AnimatePresence>
             {uploadedImage && showResults && (
               <motion.div
@@ -339,7 +315,6 @@ export default function App() {
                         alt="Uploaded food" 
                         className="w-full h-80 sm:h-96 object-cover rounded-2xl"
                       />
-                      {/* Subtle overlay on hover */}
                       <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
                     </div>
                   </div>
@@ -348,7 +323,6 @@ export default function App() {
             )}
           </AnimatePresence>
 
-          {/* Results Section */}
           <AnimatePresence>
             {showResults && (
               <motion.div
@@ -357,7 +331,6 @@ export default function App() {
                 exit={{ opacity: 0 }}
                 className="space-y-8"
               >
-                {/* Results Header */}
                 <div className="text-center space-y-4">
                   <motion.div
                     initial={{ scale: 0 }}
@@ -378,7 +351,6 @@ export default function App() {
                     Here are the top 5 matches based on visual analysis
                   </p>
 
-                  {/* Action Buttons */}
                   <div className="flex items-center justify-center gap-3 pt-4">
                     <Button
                       onClick={handleShare}
@@ -405,7 +377,6 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Results Grid */}
                 <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
                   {predictions.map((prediction, index) => (
                     <div key={index} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
@@ -423,7 +394,6 @@ export default function App() {
             )}
           </AnimatePresence>
 
-          {/* Feature Cards - Show when no results */}
           {!showResults && !isProcessing && (
             <motion.div 
               style={{ opacity: contentOpacity }}
