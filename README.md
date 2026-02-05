@@ -1,6 +1,6 @@
 # Food Vision AI
 
-<div align="center">
+<div align="left">
 
 ![Food Vision AI](https://img.shields.io/badge/Food%20Vision-AI%20Powered-orange?style=for-the-badge&logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-18.3.1-blue?style=for-the-badge&logo=react&logoColor=white)
@@ -11,8 +11,6 @@
 **AI-Powered Food Recognition Web Application**
 
 *Upload any food image and get instant AI-powered identification with confidence scores*
-
-[Quick Start](#quick-start) | [API Docs](#api-documentation) | [Deployment](#deployment)
 
 </div>
 
@@ -336,9 +334,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-- **GitHub**: [@yourusername](https://github.com/yourusername)
-- **Email**: your.email@example.com
-- **Project Link**: [https://github.com/yourusername/foodvisionai](https://github.com/yourusername/foodvisionai)
+- **GitHub**: [Rishabh1925](https://github.com/Rishabh1925)
+- **Email**: rishabhrsingh19@gmail.com
+- **Project Link**: [Rishabh1925/foodvisionai](https://github.com/Rishabh1925/foodvisionai)
 
 ---
 </div>
