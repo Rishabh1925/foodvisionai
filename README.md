@@ -6,7 +6,6 @@
 ![React](https://img.shields.io/badge/React-18.3.1-blue?style=for-the-badge&logo=react&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.13-green?style=for-the-badge&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-3.0.0-red?style=for-the-badge&logo=flask&logoColor=white)
-![Deployment Ready](https://img.shields.io/badge/Deployment-Ready-green?style=for-the-badge)
 
 **AI-Powered Food Recognition Web Application**
 
