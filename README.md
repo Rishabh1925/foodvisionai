@@ -105,8 +105,6 @@ Food Vision AI is a modern web application that uses advanced artificial intelli
    python app.py
    
    # Terminal 2 - Frontend
-   cd frontend
-   npm install
    npm run dev
    ```
 
